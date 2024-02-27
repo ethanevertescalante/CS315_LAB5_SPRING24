@@ -15,9 +15,9 @@ void test_reverseTopLevel();
 // Go down to the implementation of each test function
 //    and write down your 3 tests in its initial comment.
 int main() {
-    test_append();
+    //test_append();
     //test_numAtoms();
-    //test_maxDepth();
+    test_maxDepth();
     //test_everyOtherAtom();
     //test_memberAtLevel();
     //test_reverseTopLevel();
@@ -57,62 +57,62 @@ void test_append() {
 
 void test_numAtoms() {
 // Write your 3 test cases in this comment:
-// 1. p =
-//    result should be:
-// 2. p =
-//    result should be:
-// 3. p =
-//    result should be:
+// 1. p = (a b c)
+//    result should be: 3
+// 2. p = ( (b (d)) a a ( ( (d q) ) ) )
+//    result should be: 6
+// 3. p = ( ( ( (d (c)) ) ) )
+//    result should be: 2
 
-/* Remove this comment when you're ready
+
     list p = get_list("number of atoms");
     std::cout << "Number of atoms in p: " << numAtoms(p) << std::endl;
-*/
+
 }
 
 void test_reverseTopLevel() {
 // Write your 3 test cases in this comment:
-// 1. p =
-//    result should be:
-// 2. p =
-//    result should be:
-// 3. p =
-//    result should be:
+// 1. p = (a b c)
+//    result should be: (c b a)
+// 2. p = ((d) g ( ((s) d) ))
+//    result should be: ( ( ( ( s ) d ) ) g ( d ) )
+// 3. p = ( a (d) (g) )
+//    result should be: ( ( g ) ( d ) a )
 
-/* Remove this comment when you're ready
+
     list p = get_list("reverse top level");
     write_list(reverseTopLevel(p));
-*/
+
 }
 
 void test_maxDepth() {
 // Write your 3 test cases in this comment:
-// 1. p =
+// 1. p = ( a (b) c)
 //    result should be:
 // 2. p =
 //    result should be:
 // 3. p =
 //    result should be:
 
-/* Remove this comment when you're ready
+
     list p = get_list("max depth");
     std::cout << "Maximum depth of p: " << maxDepth(p) << std::endl;
-*/
+
 }
 
 void test_everyOtherAtom() {
 // Write your 3 test cases in this comment:
-// 1. p =
+// 1. p = (a b c d)
 //    result should be:
-// 2. p =
+// 2. p = (a d e g)
 //    result should be:
-// 3. p =
+// 3. p = (d g h i j k)
 //    result should be:
 
-/* Remove this comment when you're ready
+
     list p = get_list("every other atom");
     write_list(everyOtherAtom(p));
-*/
+
 }
 
 void test_memberAtLevel() {

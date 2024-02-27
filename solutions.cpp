@@ -53,7 +53,7 @@ list reverseTopLevel(list p) {
 }
 
 
-int max_depth(list p){
+int maxDepth(list p){
 // Here is the definition of depth for recursive lists.
 // Intuitively, the depth of a list is the maximum
 // number of levels of the list.
@@ -74,12 +74,66 @@ if(is_null(p)){
     return 0;
 }
 
-if(!is_null(car(p))){
-    return 1 + max_depth(cdr(p));
+if(is_atom(p)){
+    return 1;
 }
 
-std::max(max_depth(car(p)), max_depth(cdr(p)));
+return std::max( maxDepth(car(p) + 1), maxDepth(cdr(p)) );
 
-return max_depth(cdr(p));
+}
+
+
+list everyOtherAtom(list p) {
+// p is a list with an even number of atoms, like () or (a b c d).
+// p will NOT be a nested list, an individual atom, or a list with
+//   an odd number of elements.
+
+// The first atom in p is at position 1. The second atom is at position 2, etc.
+
+// This function creates and returns a list that consists
+// of atoms whose positions in p are odd numbers.
+
+// For example:
+// p is (a b c d e f)
+// The position of a is 1, of c is 3, and of e is 5. Therefore,
+// everyOtherAtom should return (a c e)
+
+
+if(is_null(p)){
+    return p;
+}
+
+return append(cons(car(p), null()), everyOtherAtom(cdr(cdr(p))));
+
+}
+
+
+bool memberAtLevel(list p, list q, int n) {
+// p is a recursive list, but is not an atom
+// q is an atom
+// n >= 1
+
+// Does p have an atom at level n that is equal to q?
+// The outermost level is level 1, and the level
+// increments as lists nest within it.
+
+// Example 1:
+// p = ( a b c )
+// q = b
+// n = 1
+// memberAtLevel(p, q, n) should return true because there is
+// an atom in p that is equal to q and is at level 1. This
+// function should return false if n contains anything other than 1.
+
+// Example 2:
+// p = ( a b c (c (d) e) (((f))) )
+// q = f
+// n = 4
+// memberAtLevel(p, q, n) should return true as f is at level 4 in p.
+
+
+
+
+
 
 }
