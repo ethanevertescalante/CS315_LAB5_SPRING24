@@ -15,7 +15,7 @@ void test_reverseTopLevel();
 // Go down to the implementation of each test function
 //    and write down your 3 tests in its initial comment.
 int main() {
-    //test_append();
+    test_append();
     //test_numAtoms();
     //test_maxDepth();
     //test_everyOtherAtom();
@@ -37,22 +37,22 @@ list get_list(std::string purpose) {
 
 void test_append() {
 // Write your 3 test cases in this comment:
-// 1. p =
-//    q =
-//    result should be:
-// 2. p =
-//    q =
-//    result should be:
-// 3. p =
-//    q =
-//    result should be:
+// 1. p = (a b c)
+//    q = (d e f)
+//    result should be: ( a b c d e f)
+// 2. p = ((a) (b c (d)) f)
+//    q = (x (y (z)))
+//    result should be: ( ( a ) ( b c ( d ) ) f x ( y ( z ) ) )
+// 3. p = (h ((d)) (x y) z)
+//    q = (a b)
+//    result should be: ( h ( ( d ) ) ( x y ) z a b )
 
-/* Remove this comment when you're ready
+
     list p = get_list("append (original list)");
     list q = get_list("append (add-on)");
     std::cout << "Appending q to p: ";
     write_list(append(p,q));
-*/
+
 }
 
 void test_numAtoms() {
