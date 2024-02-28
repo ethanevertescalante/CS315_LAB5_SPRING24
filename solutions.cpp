@@ -1,3 +1,6 @@
+//Ethan Escalante
+//James Togher
+
 #include<cstring>
 #include <algorithm>
 #include "reclists.hpp"
@@ -78,7 +81,7 @@ if(is_atom(p)){
     return 1;
 }
 
-return std::max( maxDepth(car(p) + 1), maxDepth(cdr(p)) );
+return std::max( maxDepth(car(p)) + 1, maxDepth(cdr(p)));
 
 }
 
@@ -131,8 +134,24 @@ bool memberAtLevel(list p, list q, int n) {
 // n = 4
 // memberAtLevel(p, q, n) should return true as f is at level 4 in p.
 
+    if(is_null(p)){
+        return false;
+    }
 
 
+    if (is_atom(car(p))) {
+        if(n == 1) {
+            if (eq(car(p), q)) {
+                return true;
+            }
+        }else if(!is_null(cdr(p))){
+            return memberAtLevel(cdr(p), q, n);
+        }
+
+        return memberAtLevel(cdr(p),q, n);
+    }
+
+    return memberAtLevel(car(p), q, n-1) || memberAtLevel(cdr(p), q, n);
 
 
 

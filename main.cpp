@@ -17,9 +17,9 @@ void test_reverseTopLevel();
 int main() {
     //test_append();
     //test_numAtoms();
-    test_maxDepth();
+    //test_maxDepth();
     //test_everyOtherAtom();
-    //test_memberAtLevel();
+    test_memberAtLevel();
     //test_reverseTopLevel();
     return 0;
 }
@@ -88,11 +88,11 @@ void test_reverseTopLevel() {
 void test_maxDepth() {
 // Write your 3 test cases in this comment:
 // 1. p = ( a (b) c)
-//    result should be:
-// 2. p =
-//    result should be:
-// 3. p =
-//    result should be:
+//    result should be: 3
+// 2. p = ( ((a)) b ((((c)))) )
+//    result should be: 6
+// 3. p = (a b c ((d)) )
+//    result should be: 4
 
 
     list p = get_list("max depth");
@@ -103,11 +103,11 @@ void test_maxDepth() {
 void test_everyOtherAtom() {
 // Write your 3 test cases in this comment:
 // 1. p = (a b c d)
-//    result should be:
+//    result should be:(a c)
 // 2. p = (a d e g)
-//    result should be:
+//    result should be:(a e)
 // 3. p = (d g h i j k)
-//    result should be:
+//    result should be:(d h j)
 
 
     list p = get_list("every other atom");
@@ -117,11 +117,11 @@ void test_everyOtherAtom() {
 
 void test_memberAtLevel() {
 // Write your 3 test cases in this comment:
-// 1. p =
-//    q =
-//    n =
+// 1. p = (a b ((c)) )
+//    q = c
+//    n = 3
 //    result should be:
-// 2. p =
+// 2. p = (a b c)
 //    q =
 //    n =
 //    result should be:
@@ -130,7 +130,7 @@ void test_memberAtLevel() {
 //    n =
 //    result should be:
 
-/* Remove this comment when you're ready
+
     int level;
     std::string result;
     list p = get_list("memberAtLevel (original list)");
@@ -139,5 +139,5 @@ void test_memberAtLevel() {
     std::cin >> level;
     result = memberAtLevel(p, q, level) ? "Yes" : "No";
     std::cout << "Atom found at level " << level << "? " << result << std::endl;
-*/
+
 }
