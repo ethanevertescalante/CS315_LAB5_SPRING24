@@ -138,13 +138,12 @@ bool memberAtLevel(list p, list q, int n) {
         return false;
     }
 
-
     if (is_atom(car(p))) {
         if(n == 1) {
             if (eq(car(p), q)) {
                 return true;
             }
-        }else if(!is_null(cdr(p))){
+        }else if(!is_null(cdr(p))){ //probably not needed
             return memberAtLevel(cdr(p), q, n);
         }
 
@@ -152,6 +151,7 @@ bool memberAtLevel(list p, list q, int n) {
     }
 
     return memberAtLevel(car(p), q, n-1) || memberAtLevel(cdr(p), q, n);
+    //checking if car(p) OR cdr(p) is true or false, as long as one of these are true, the elements match up and the n decrements to one (base level)
 
 
 

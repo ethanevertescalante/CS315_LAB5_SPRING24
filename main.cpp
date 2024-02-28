@@ -19,7 +19,7 @@ int main() {
     //test_numAtoms();
     //test_maxDepth();
     //test_everyOtherAtom();
-    test_memberAtLevel();
+    //test_memberAtLevel();
     //test_reverseTopLevel();
     return 0;
 }
