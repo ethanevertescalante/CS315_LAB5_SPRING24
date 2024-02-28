@@ -119,16 +119,16 @@ void test_memberAtLevel() {
 // Write your 3 test cases in this comment:
 // 1. p = (a b ((c)) )
 //    q = c
-//    n = 3
-//    result should be:
+//    n = 2
+//    result should be: No
 // 2. p = (a b c)
-//    q =
-//    n =
-//    result should be:
-// 3. p =
-//    q =
-//    n =
-//    result should be:
+//    q = d
+//    n = 1
+//    result should be: No
+// 3. p = ( ((a)) b c (((d))) )
+//    q = d
+//    n = 4
+//    result should be: Yes
 
 
     int level;
